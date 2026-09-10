@@ -98,13 +98,16 @@
     'looking for an open lobby…': '正在查找空闲房间…',
 
     /* ---- maps ---- */
+    'DOODLE STATION': '涂鸦车站', 'DOODLE TEMPLE': '涂鸦神庙',
+    'platforms, footbridges and parked trains': '站台、天桥与停靠的列车',
+    'a stepped pyramid, cloisters and a sunken pool': '阶梯金字塔、回廊与下沉水池',
     'DOODLE DISTRICT': '涂鸦街区',
     'DOODLE JUNGLE': '涂鸦丛林',
     'DOODLE MEXICO': '涂鸦墨西哥',
     'streets, rooftops and fire escapes': '街道、屋顶与消防梯',
     'canopies, vines and a lost temple': '树冠、藤蔓与失落神庙',
-    'a sun-baked plaza · piñatas, tacos and mariachi · test map':
-      '烈日广场 · 皮纳塔、塔可与马里亚奇 · 测试地图',
+    'a sun-baked plaza · piñatas, tacos and mariachi ':
+      '烈日广场 · 皮纳塔、塔可与马里亚奇',
 
     /* ---- HUD ---- */
     'HP': '生命',
