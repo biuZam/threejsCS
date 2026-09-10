@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doodle District</title>
+<!-- Local fonts instead of Google Fonts CDN -->
+<link rel="stylesheet" href="./lib/fonts/fonts.css">
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "./three-hook.js",
+  "three-real": "./lib/three/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2T3DSVPBW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H2T3DSVPBW');
+</script>
+<body>
+<canvas id="c"></canvas>
+<div id="hud"></div>
+<script src="./lib/peerjs/peerjs.min.js"></script>
+<script src="./peer-hook.js"></script>
+<script src="./i18n.js"></script>
+<!-- Translation modules -->
+<script src="./translations/zh-hant.js"></script>
+<script src="./translations/ko.js"></script>
+<script src="./translations/ja.js"></script>
+<script src="./translations/de.js"></script>
+<script src="./translations/fr.js"></script>
+<script src="./translations/pt.js"></script>
+<script type="module" src="./game.js"></script>
+</body>
+</html>
