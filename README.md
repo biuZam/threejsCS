@@ -15,9 +15,9 @@ npx @tauri-apps/cli dev
 Tauri cannot cross-compile a Windows build from macOS/Linux (it links against
 the native WebView2/MSVC toolchain). Two options:
 
-1. **CI (recommended)**: push to `main` on GitHub — `.github/workflows/build-windows.yml`
-   builds on a `windows-latest` runner and uploads the `.exe` (NSIS installer)
-   as a workflow artifact.
+1. **CI (recommended)**: push to `main` on GitHub — `.github/workflows/build.yml`
+   builds the Windows `.exe` (NSIS) and macOS `.dmg` and publishes them
+   to the GitHub release `v<version>`.
 2. **On an actual Windows machine**: install Rust + "Desktop development with
    C++" (Visual Studio Build Tools), then run:
    ```bash

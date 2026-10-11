@@ -1,0 +1,49 @@
+name: Build & Release
+
+# Windows (NSIS .exe) + macOS (universal .dmg), published to the GitHub
+# release v<version> (version from src-tauri/tauri.conf.json). Re-running for
+# the same version replaces the assets on that release.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            args: "--bundles nsis"
+          - os: macos-latest
+            args: "--target universal-apple-darwin --bundles dmg"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.os == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - name: Build Tauri app and publish release
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: .
+          tauriScript: npx --yes @tauri-apps/cli@latest
+          args: ${{ matrix.args }}
+          tagName: v__VERSION__
+          releaseName: Doodle District v__VERSION__
+          releaseBody: Windows installer (.exe) and macOS disk image (.dmg, universal). Unsigned builds.
+          releaseDraft: false
+          prerelease: false
