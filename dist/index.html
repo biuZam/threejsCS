@@ -1,44 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>window.DOODLE_APP = 1;</script>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<!-- Phones: add-to-home-screen launches fullscreen + landscape (manifest); iOS reads the apple-* tags -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#f6f3e6">
 <title>Doodle District</title>
-<!-- Local fonts instead of Google Fonts CDN -->
-<link rel="stylesheet" href="./lib/fonts/fonts.css">
-<link rel="stylesheet" href="./style.css">
-<script type="importmap">
-{ "imports": {
-  "three": "./three-hook.js",
-  "three-real": "./lib/three/three.module.js",
-  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
-} }
-</script>
+<link rel="icon" href="./favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="stylesheet" href="./assets/style.41f5e22ff2.css">
+<link rel="modulepreload" href="./assets/three.fb219a003e.js">
+<link rel="modulepreload" href="./assets/app.5579d3edf4.js">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2T3DSVPBW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H2T3DSVPBW');
-</script>
 <body>
 <canvas id="c"></canvas>
 <div id="hud"></div>
-<script src="./lib/peerjs/peerjs.min.js"></script>
-<script src="./peer-hook.js"></script>
-<script src="./i18n.js"></script>
-<!-- Translation modules -->
-<script src="./translations/zh-hant.js"></script>
-<script src="./translations/ko.js"></script>
-<script src="./translations/ja.js"></script>
-<script src="./translations/de.js"></script>
-<script src="./translations/fr.js"></script>
-<script src="./translations/pt.js"></script>
-<!-- Extra maps: registers into window.DOODLE_MAPS before game.js evaluates -->
-<script type="module" src="./maps.js"></script>
-<script type="module" src="./game.js"></script>
+<script src="./assets/boot.96c6de4098.js"></script>
+<script type="module" src="./assets/app.5579d3edf4.js"></script>
 </body>
 </html>

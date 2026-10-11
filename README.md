@@ -27,15 +27,12 @@ the native WebView2/MSVC toolchain). Two options:
 
 ## Updating the bundled frontend
 
-`dist/` is a copy of the relevant files from `../doodle` (everything except
-the dev-server scripts and Node tooling). After editing the game, re-sync:
+`dist/` is the release build of the game (minified + obfuscated, `npm run dist`
+in `doodle-district/doodle`), post-processed by `tools/app-www.mjs` (drops
+Google Analytics, sets `window.DOODLE_APP = 1` so multiplayer uses the same
+signalling server and room pool as the web version). To re-sync:
 
 ```bash
-cd ../doodle
-cp index.html game.js style.css i18n.js ads.js three-hook.js peer-hook.js paper.js favicon.ico ../doodle-desktop/dist/
-cp -R ads lib translations ../doodle-desktop/dist/
+cd ../doodle-district/doodle
+node tools/app-www.mjs ../../doodle-desktop/dist
 ```
-
-Multiplayer signalling: the desktop build always uses the public
-`0.peerjs.com` server (see `peer-hook.js`) since it doesn't bundle the local
-`peerserver-go` signalling server.
