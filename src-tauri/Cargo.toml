@@ -1,6 +1,6 @@
 [package]
 name = "doodle-district"
-version = "1.0.0"
+version = "1.1.0"
 description = "Doodle District desktop shell"
 edition = "2021"
 
